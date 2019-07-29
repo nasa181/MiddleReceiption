@@ -1,3 +1,6 @@
+use serde::Deserialize;
+
+#[derive(Deserialize)]
 pub struct CreditCard<'a>{
     pub nameOnCard: &'a str,
     pub cardNumber: &'a str,
