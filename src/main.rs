@@ -15,13 +15,13 @@ fn hello(name: &RawStr) -> String {
 
 #[post("/charge", format = "json", data = "<creditCard>")]
 fn charge(creditCard: Json<common::model::CreditCard::CreditCard>) -> String {
-    format!("
-        nameOnCard: {},
+    format!(
+        "nameOnCard: {},
         cardNumber: {},
         cvv: {},
         expMonth: {},
-        expYear: {}
-    ", creditCard.nameOnCard, creditCard.cardNumber, creditCard.cvv, creditCard.expMonth, creditCard.expYear )
+        expYear: {}", 
+        creditCard.nameOnCard, creditCard.cardNumber, creditCard.cvv, creditCard.expMonth, creditCard.expYear )
 }
 
 fn main() {
